@@ -1,0 +1,30 @@
+<br>
+<div id="main">
+    <div class="card">
+      <img class="card-img-top" src="https://placehold.it/350x150" alt="Card image cap" />
+      <div class="card-block">
+        <h4 class="card-title"><%= @post.title %></h4>
+        <p class="card-text"><%= @post.body %></p>
+        <button type='button' class="btn btn-primary"> Yes, I'm Interested </button>
+        <a href="/posts/<%= @post.id + 1 %>" class="btn btn-danger">No, Skip</a>
+          <div class="card" id="contact">
+            <ul class="list-group">
+              <li class="list-group-item"><%= @post.website %></li>
+            </ul>
+            <a href="/posts/<%= @post.id + 1 %>" class="btn btn-warning">Next</a>            
+          </div>
+      </div>
+    </div>
+</div>
+<div id="main">
+</div>
+
+<script>
+  $("#contact").hide();
+  $( ".btn-primary" ).click(function() 
+  {
+    $(".btn-primary").hide();
+    $(".btn-danger").hide();
+    $("#contact").fadeIn();
+  });
+</script>
