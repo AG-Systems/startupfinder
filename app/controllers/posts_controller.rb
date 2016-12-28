@@ -1,9 +1,12 @@
 class PostsController < ApplicationController
  include PostsHelper
     def index
-       @posts = Post.all
+       @posts = Post.select("id, body, title, website").all
     end
-    
+    def api
+        @posts = Post.all
+        render json: @posts
+    end
     def new
         @post = Post.new
     end

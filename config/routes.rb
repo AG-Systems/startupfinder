@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :posts
-  root 'posts#index'
+  get 'api' => 'posts#api'
+  root :to => "posts#show", :id => '1'
 end
